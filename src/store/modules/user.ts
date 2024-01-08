@@ -10,6 +10,7 @@ import router from '@/router'
 interface UserState {
   userInfo?: UserType
   tokenKey: string
+  uid: string
   token: string
   roleRouters?: string[] | AppCustomRouteRecordRaw[]
   rememberMe: boolean
@@ -22,6 +23,7 @@ export const useUserStore = defineStore('user', {
       userInfo: undefined,
       tokenKey: 'Authorization',
       token: '',
+      uid: '',
       roleRouters: undefined,
       // 记住我
       rememberMe: true,
@@ -34,6 +36,9 @@ export const useUserStore = defineStore('user', {
     },
     getToken(): string {
       return this.token
+    },
+    getUid(): string {
+      return this.uid
     },
     getUserInfo(): UserType | undefined {
       return this.userInfo
@@ -54,6 +59,9 @@ export const useUserStore = defineStore('user', {
     },
     setToken(token: string) {
       this.token = token
+    },
+    setUid(uid: string) {
+      this.uid = uid
     },
     setUserInfo(userInfo?: UserType) {
       this.userInfo = userInfo

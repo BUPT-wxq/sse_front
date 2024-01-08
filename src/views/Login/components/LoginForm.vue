@@ -14,7 +14,7 @@ import { useValidator } from '@/hooks/web/useValidator'
 import { Icon } from '@/components/Icon'
 import { useUserStore } from '@/store/modules/user'
 import { BaseButton } from '@/components/Button'
-
+// import axios, { AxiosRequestConfig } from 'axios'
 const { required } = useValidator()
 
 const emit = defineEmits(['to-register'])
@@ -229,8 +229,9 @@ const signIn = async () => {
       const formData = await getFormData<UserType>()
 
       try {
+        console.log('formData:', formData)
         const res = await loginApi(formData)
-
+        console.log(res)
         if (res) {
           // 是否记住我
           if (unref(remember)) {
@@ -243,6 +244,8 @@ const signIn = async () => {
           }
           userStore.setRememberMe(unref(remember))
           userStore.setUserInfo(res.data)
+          userStore.setToken(res.data['token'])
+          userStore.setUid(res.data['uid'])
           // 是否使用动态路由
           if (appStore.getDynamicRouter) {
             getRole()
