@@ -6,6 +6,11 @@ import axios, { AxiosRequestConfig } from 'axios'
 //   return request.get({ url: '/api/query/log', params })
 // }
 
+interface TableListResponse {
+  list: any[]
+  total: number
+}
+
 export const getCardTableListApi = (params: any) => {
   return request.get({ url: '/mock/card/list', params })
 }
@@ -26,7 +31,7 @@ export const getTableDetApi = (id: string) => {
 //   return request.post({ url: '/mock/example/delete', data: { ids } })
 // }
 
-export const getTableListApi = (params: any) => {
+export const getTableListApi = (params: any): Promise<TableListResponse> => {
   const loginConfig: AxiosRequestConfig = {
     headers: {
       'Content-Type': 'application/json',
@@ -35,9 +40,16 @@ export const getTableListApi = (params: any) => {
     },
     data: {
       pageIndex: params.pageIndex,
-      pageSize: params.pageSize
+      pageSize: params.pageSize,
+      opType: params.opType
     }
   }
   console.log(loginConfig.data)
-  return axios.post('/api/query/log', loginConfig.data, loginConfig)
+  return axios.post('/api/query/log', loginConfig.data, loginConfig).then((res) => {
+    const newRes = {
+      list: res.data.logs,
+      total: res.data.total
+    }
+    return newRes
+  })
 }

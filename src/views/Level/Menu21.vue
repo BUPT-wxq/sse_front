@@ -36,7 +36,7 @@ const { tableRegister, tableState } = useTable({
       pageSize: ref(pageSize).value,
       uid: userStore.getUid,
       token: userStore.getToken,
-      opType: t('router.menu12')
+      opType: t('router.menu21')
     })
     tableState.dataList = ref(res.list)
     tableState.total = ref(res.total)
@@ -51,7 +51,7 @@ const getTableList = async (params?: Params): Promise<TableListResponse> => {
       pageSize: 10,
       uid: userStore.getUid,
       token: userStore.getToken,
-      opType: t('router.menu12')
+      opType: t('router.menu21')
     }
   )
   return res

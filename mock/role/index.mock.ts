@@ -61,6 +61,14 @@ const adminList = [
           title: 'router.menu2'
         }
       }
+      // {
+      //   path: 'menu3',
+      //   name: 'Menu3Demo',
+      //   component: 'views/Level/Menu3',
+      //   meta: {
+      //     title: 'router.menu3'
+      //   }
+      // }
     ]
   }
 ]
@@ -71,7 +79,8 @@ const testList: string[] = [
   '/level/menu1/menu1-1',
   '/level/menu1/menu1-1/menu1-1-1',
   '/level/menu1/menu1-2',
-  '/level/menu2'
+  '/level/menu2',
+  '/level/menu3'
 ]
 
 export default [

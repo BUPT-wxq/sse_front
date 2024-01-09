@@ -59,7 +59,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
   {
     path: '/level',
     component: Layout,
-    redirect: '/level/menu1/menu1-1/menu1-1-1',
+    redirect: '/level/menu1/menu1-1',
     name: 'Level',
     meta: {
       title: t('router.level'),
@@ -70,7 +70,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
         path: 'menu1',
         name: 'Menu1',
         component: getParentLayout(),
-        redirect: '/level/menu1/menu1-1/menu1-1-1',
+        redirect: '/level/menu1/menu1-1',
         meta: {
           title: t('router.menu1')
         },
@@ -78,22 +78,10 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           {
             path: 'menu1-1',
             name: 'Menu11',
-            component: getParentLayout(),
-            redirect: '/level/menu1/menu1-1/menu1-1-1',
+            component: import('@/views/Level/Menu11.vue'),
             meta: {
-              title: t('router.menu11'),
-              alwaysShow: true
-            },
-            children: [
-              {
-                path: 'menu1-1-1',
-                name: 'Menu111',
-                component: () => import('@/views/Level/Menu111.vue'),
-                meta: {
-                  title: t('router.menu111')
-                }
-              }
-            ]
+              title: t('router.menu11')
+            }
           },
           {
             path: 'menu1-2',
@@ -108,9 +96,103 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       {
         path: 'menu2',
         name: 'Menu2',
-        component: () => import('@/views/Level/Menu2.vue'),
+        component: getParentLayout(),
+        redirect: '/level/menu2/menu2-1',
         meta: {
           title: t('router.menu2')
+        },
+        children: [
+          {
+            path: 'menu2-1',
+            name: 'Menu21',
+            component: import('@/views/Level/Menu21.vue'),
+            meta: {
+              title: t('router.menu21')
+            }
+          },
+          {
+            path: 'menu2-2',
+            name: 'Menu22',
+            component: () => import('@/views/Level/Menu22.vue'),
+            meta: {
+              title: t('router.menu22')
+            }
+          },
+          {
+            path: 'menu2-3',
+            name: 'Menu23',
+            component: () => import('@/views/Level/Menu23.vue'),
+            meta: {
+              title: t('router.menu23')
+            }
+          }
+        ]
+      },
+      {
+        path: 'menu3',
+        name: 'Menu3',
+        component: getParentLayout(),
+        redirect: '/level/menu3/menu3-1',
+        meta: {
+          title: t('router.menu3')
+        },
+        children: [
+          {
+            path: 'menu3-1',
+            name: 'Menu31',
+            component: import('@/views/Level/Menu31.vue'),
+            meta: {
+              title: t('router.menu31')
+            }
+          },
+          {
+            path: 'menu3-2',
+            name: 'Menu32',
+            component: () => import('@/views/Level/Menu32.vue'),
+            meta: {
+              title: t('router.menu32')
+            }
+          },
+          {
+            path: 'menu3-3',
+            name: 'Menu33',
+            component: () => import('@/views/Level/Menu33.vue'),
+            meta: {
+              title: t('router.menu33')
+            }
+          },
+          {
+            path: 'menu3-4',
+            name: 'Menu34',
+            component: import('@/views/Level/Menu34.vue'),
+            meta: {
+              title: t('router.menu34')
+            }
+          },
+          {
+            path: 'menu3-5',
+            name: 'Menu35',
+            component: () => import('@/views/Level/Menu35.vue'),
+            meta: {
+              title: t('router.menu35')
+            }
+          },
+          {
+            path: 'menu3-6',
+            name: 'Menu36',
+            component: () => import('@/views/Level/Menu36.vue'),
+            meta: {
+              title: t('router.menu36')
+            }
+          }
+        ]
+      },
+      {
+        path: 'menu4',
+        name: 'Menu4',
+        component: () => import('@/views/Level/Menu4.vue'),
+        meta: {
+          title: t('router.menu4')
         }
       }
     ]
