@@ -21,6 +21,7 @@ function pathResolve(dir: string) {
   return resolve(root, '.', dir)
 }
 
+
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   let env = {} as any
   const isBuild = command === 'build'
@@ -140,7 +141,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       proxy: {
         // 选项写法
         '/api': {
-          target: 'http://127.0.0.1:8000',
+          target: 'https://sse_client:30051/api',
           changeOrigin: true,
           rewrite: path => path.replace(/^\/api/, '')
         }

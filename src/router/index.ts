@@ -78,7 +78,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           {
             path: 'menu1-1',
             name: 'Menu11',
-            component: import('@/views/Level/Menu11.vue'),
+            component: () => import('@/views/Level/Menu11.vue'),
             meta: {
               title: t('router.menu11')
             }
@@ -105,7 +105,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           {
             path: 'menu2-1',
             name: 'Menu21',
-            component: import('@/views/Level/Menu21.vue'),
+            component: () => import('@/views/Level/Menu21.vue'),
             meta: {
               title: t('router.menu21')
             }
@@ -140,7 +140,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           {
             path: 'menu3-1',
             name: 'Menu31',
-            component: import('@/views/Level/Menu31.vue'),
+            component: () => import('@/views/Level/Menu31.vue'),
             meta: {
               title: t('router.menu31')
             }
@@ -164,7 +164,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           {
             path: 'menu3-4',
             name: 'Menu34',
-            component: import('@/views/Level/Menu34.vue'),
+            component: () => import('@/views/Level/Menu34.vue'),
             meta: {
               title: t('router.menu34')
             }
