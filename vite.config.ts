@@ -141,7 +141,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       proxy: {
         // 选项写法
         '/api': {
-          target: 'https://sse_client:30051/api',
+          target: 'http://sse_client:30051/api',
           changeOrigin: true,
           rewrite: path => path.replace(/^\/api/, '')
         }

@@ -1,9 +1,9 @@
 <script setup lang="tsx">
 import { useI18n } from '@/hooks/web/useI18n'
-import { Table, TableColumn, TableSlotDefault } from '@/components/Table'
+import { Table, TableColumn } from '@/components/Table'
 // import { getTreeTableListApi } from '@/api/table'
 // import { reactive, unref } from 'vue'
-import { ElButton } from 'element-plus'
+// import { ElButton } from 'element-plus'
 import { useTable } from '@/hooks/web/useTable'
 import { getTableListApi } from '@/api/table'
 import { useUserStore } from '@/store/modules/user'
@@ -86,25 +86,8 @@ const columns = reactive<TableColumn[]>([
   {
     field: 'Content',
     label: t('tableDemo.errContent')
-  },
-  {
-    field: 'action',
-    label: t('tableDemo.action'),
-    slots: {
-      default: (data) => {
-        return (
-          <ElButton type="primary" onClick={() => actionFn(data)}>
-            {t('tableDemo.action')}
-          </ElButton>
-        )
-      }
-    }
   }
 ])
-
-const actionFn = (data: TableSlotDefault) => {
-  console.log(data)
-}
 </script>
 
 <template>
