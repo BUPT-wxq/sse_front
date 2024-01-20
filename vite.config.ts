@@ -12,7 +12,6 @@ import VueI18nPlugin from "@intlify/unplugin-vue-i18n/vite"
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-import'
 import UnoCSS from 'unocss/vite'
-import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vitejs.dev/config/
 const root = process.cwd()
@@ -123,17 +122,17 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       outDir: env.VITE_OUT_DIR || 'dist',
       sourcemap: env.VITE_SOURCEMAP === 'true',
       // brotliSize: false,
-      rollupOptions: {
-        plugins: env.VITE_USE_BUNDLE_ANALYZER === 'true' ? [visualizer()] : undefined,
-        // 拆包
-        output: {
-          manualChunks: {
-            'vue-chunks': ['vue', 'vue-router', 'pinia', 'vue-i18n'],
-            'element-plus': ['element-plus'],
-            'wang-editor': ['@wangeditor/editor', '@wangeditor/editor-for-vue']
-          }
-        }
-      },
+      // rollupOptions: {
+      //   plugins: env.VITE_USE_BUNDLE_ANALYZER === 'true' ? undefined : undefined,
+      //   // 拆包
+      //   output: {
+      //     manualChunks: {
+      //       'vue-chunks': ['vue', 'vue-router', 'pinia', 'vue-i18n'],
+      //       'element-plus': ['element-plus'],
+      //       'wang-editor': ['@wangeditor/editor', '@wangeditor/editor-for-vue']
+      //     }
+      //   }
+      // },
       cssCodeSplit: !(env.VITE_USE_CSS_SPLIT === 'false')
     },
     server: {
