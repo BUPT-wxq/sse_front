@@ -85,7 +85,12 @@ const columns = reactive<TableColumn[]>([
   },
   {
     field: 'Content',
-    label: t('tableDemo.errContent')
+    label: t('tableDemo.errContent'),
+    slots: {
+      default: (data) => {
+        return data['Content'] ? data['Content'] : '空'
+      }
+    }
   }
 ])
 </script>

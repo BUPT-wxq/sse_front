@@ -45,7 +45,7 @@ export const getTableListApi = (params: any): Promise<TableListResponse> => {
     }
   }
   console.log(loginConfig.data)
-  return axios.post('/api/query/log', loginConfig.data, loginConfig).then((res) => {
+  return axios.post('/api/logs/list', loginConfig.data, loginConfig).then((res) => {
     const newRes = {
       list: res.data.logs,
       total: res.data.total
