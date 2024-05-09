@@ -1,3 +1,5 @@
+import Menu5 from '@/views/Level/Menu5.vue'
+
 export default {
   common: {
     inputText: '请输入',
@@ -135,6 +137,7 @@ export default {
     menu35: '明文数据下载',
     menu36: '用户贡献值查询',
     menu4: '接口调用情况',
+    menu5: '文件日志',
     dashboard: '首页',
     analysis: '分析页',
     workplace: '工作台',

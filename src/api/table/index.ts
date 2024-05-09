@@ -53,3 +53,26 @@ export const getTableListApi = (params: any): Promise<TableListResponse> => {
     return newRes
   })
 }
+
+export const getFilelogsListApi = (params: any): Promise<TableListResponse> => {
+  const loginConfig: AxiosRequestConfig = {
+    headers: {
+      'Content-Type': 'application/json',
+      uid: params.uid,
+      token: params.token
+    },
+    data: {
+      pageIndex: params.pageIndex,
+      pageSize: params.pageSize
+      // opType: params.opType
+    }
+  }
+  console.log(loginConfig.data)
+  return axios.post('/api/fileslog/list', loginConfig.data, loginConfig).then((res) => {
+    const newRes = {
+      list: res.data.fileslog,
+      total: res.data.total
+    }
+    return newRes
+  })
+}

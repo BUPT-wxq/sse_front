@@ -53,6 +53,9 @@ const toDocument = () => {
         <ElDropdownItem>
           <div @click="toDocument">{{ t('common.document') }}</div>
         </ElDropdownItem>
+        <ElDropdownItem>
+          <div @click="toDocument">{{ '个人信息' }}</div>
+        </ElDropdownItem>
         <ElDropdownItem divided>
           <div @click="lockScreen">{{ t('lock.lockScreen') }}</div>
         </ElDropdownItem>
