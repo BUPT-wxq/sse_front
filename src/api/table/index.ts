@@ -76,3 +76,49 @@ export const getFilelogsListApi = (params: any): Promise<TableListResponse> => {
     return newRes
   })
 }
+
+export const getEncdatalogsListApi = (params: any): Promise<TableListResponse> => {
+  const loginConfig: AxiosRequestConfig = {
+    headers: {
+      'Content-Type': 'application/json',
+      uid: params.uid,
+      token: params.token
+    },
+    data: {
+      pageIndex: params.pageIndex,
+      pageSize: params.pageSize
+      // opType: params.opType
+    }
+  }
+  console.log(loginConfig.data)
+  return axios.post('/api/encdatalog/list', loginConfig.data, loginConfig).then((res) => {
+    const newRes = {
+      list: res.data.encdataslog,
+      total: res.data.total
+    }
+    return newRes
+  })
+}
+
+export const getUserinfoListApi = (params: any): Promise<TableListResponse> => {
+  const loginConfig: AxiosRequestConfig = {
+    headers: {
+      'Content-Type': 'application/json',
+      uid: params.uid,
+      token: params.token
+    },
+    data: {
+      pageIndex: params.pageIndex,
+      pageSize: params.pageSize
+      // opType: params.opType
+    }
+  }
+  console.log(loginConfig.data)
+  return axios.post('/api/userinfo/list', loginConfig.data, loginConfig).then((res) => {
+    const newRes = {
+      list: res.data.users,
+      total: res.data.total
+    }
+    return newRes
+  })
+}

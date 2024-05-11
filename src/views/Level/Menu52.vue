@@ -5,7 +5,7 @@ import { Table, TableColumn } from '@/components/Table'
 // import { reactive, unref } from 'vue'
 // import { ElButton } from 'element-plus'
 import { useTable } from '@/hooks/web/useTable'
-import { getFilelogsListApi } from '@/api/table'
+import { getEncdatalogsListApi } from '@/api/table'
 import { useUserStore } from '@/store/modules/user'
 import { reactive, ref } from 'vue'
 // import { ref, watch, unref, nextTick, onMounted } from 'vue'
@@ -41,7 +41,7 @@ const { tableRegister, tableState } = useTable({
 })
 
 const getTableList = async (params?: Params): Promise<TableListResponse> => {
-  const res = await getFilelogsListApi(
+  const res = await getEncdatalogsListApi(
     params || {
       pageIndex: 1,
       pageSize: 10,
@@ -68,20 +68,16 @@ const columns = reactive<TableColumn[]>([
     label: '文件标识符'
   },
   {
-    field: 'OpType',
-    label: '操作类型'
-  },
-  {
-    field: 'CreatedAt',
-    label: '操作时间'
-  },
-  {
-    field: 'OpUser',
-    label: '操作人'
-  },
-  {
     field: 'Userid',
-    label: '文件拥有者'
+    label: '文件上传者'
+  },
+  {
+    field: 'DownloadUsers',
+    label: '文件下载者'
+  },
+  {
+    field: 'DownloadCnt',
+    label: '下载量'
   }
 ])
 </script>

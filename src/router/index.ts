@@ -198,9 +198,36 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
       {
         path: 'menu5',
         name: 'Menu5',
-        component: () => import('@/views/Level/Menu5.vue'),
+        component: getParentLayout(),
+        redirect: '/level/menu5/menu5-1',
         meta: {
           title: t('router.menu5')
+        },
+        children: [
+          {
+            path: 'menu5-1',
+            name: 'Menu51',
+            component: () => import('@/views/Level/Menu51.vue'),
+            meta: {
+              title: t('router.menu51')
+            }
+          },
+          {
+            path: 'menu5-2',
+            name: 'Menu52',
+            component: () => import('@/views/Level/Menu52.vue'),
+            meta: {
+              title: t('router.menu52')
+            }
+          }
+        ]
+      },
+      {
+        path: 'menu6',
+        name: 'Menu6',
+        component: () => import('@/views/Level/Menu6.vue'),
+        meta: {
+          title: t('router.menu6')
         }
       }
     ]
