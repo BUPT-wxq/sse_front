@@ -34,5 +34,6 @@ export const loginApi = (formData: UserType) => {
       password: formData.password
     }
   }
-  return axios.post('/api/user/login', loginConfig.data, loginConfig)
+  //return axios.post('/api/user/login', loginConfig.data, loginConfig)
+  return axios.post('/mock/user/login', loginConfig.data, loginConfig)
 }

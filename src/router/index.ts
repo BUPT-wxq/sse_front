@@ -3,7 +3,6 @@ import type { RouteRecordRaw } from 'vue-router'
 import type { App } from 'vue'
 import { Layout, getParentLayout } from '@/utils/routerHelper'
 import { useI18n } from '@/hooks/web/useI18n'
-
 const { t } = useI18n()
 
 export const constantRouterMap: AppRouteRecordRaw[] = [
@@ -228,6 +227,14 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
         component: () => import('@/views/Level/Menu6.vue'),
         meta: {
           title: t('router.menu6')
+        }
+      },
+      {
+        path: 'menu7',
+        name: 'Menu7',
+        component: () => import('@/views/Level/Menu7.vue'),
+        meta: {
+          title: t('router.menu7')
         }
       }
     ]

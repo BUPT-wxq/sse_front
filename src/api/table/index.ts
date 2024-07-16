@@ -63,8 +63,7 @@ export const getFilelogsListApi = (params: any): Promise<TableListResponse> => {
     },
     data: {
       pageIndex: params.pageIndex,
-      pageSize: params.pageSize
-      // opType: params.opType
+      pageSize: params.pageSizey
     }
   }
   console.log(loginConfig.data)

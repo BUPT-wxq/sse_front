@@ -8,6 +8,7 @@ import { useTable } from '@/hooks/web/useTable'
 import { getTableListApi } from '@/api/table'
 import { useUserStore } from '@/store/modules/user'
 import { reactive, ref } from 'vue'
+import {ContentWrap} from '../../components/ContentWrap'
 // import { ref, watch, unref, nextTick, onMounted } from 'vue'
 // import { responseEncoding } from 'axios'
 
@@ -76,11 +77,26 @@ const columns = reactive<TableColumn[]>([
   },
   {
     field: 'CreatedAt',
-    label: t('tableDemo.createtime')
+    label: t('tableDemo.createtime'),
+    slots: {
+      default: (scope) => {
+        const date = new Date(scope.row.CreatedAt);
+        const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
+        return formattedDate;
+      }
+    }
   },
   {
     field: 'UpdatedAt',
     label: t('tableDemo.updatetime')
+    // slots: {
+    //   default: (scope) => {
+    //     const date = new Date(scope.row.UpdatedAt);
+    //     const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
+    //     console.log(formattedDate)
+    //     return formattedDate;
+    //   }
+    // }
   },
   {
     field: 'Status',

@@ -1,4 +1,4 @@
-import Menu5 from '@/views/Level/Menu5.vue'
+//import Menu5 from '@/views/Level/Menu5.vue'
 
 export default {
   common: {
@@ -141,6 +141,7 @@ export default {
     menu51: '文件下载记录',
     menu52: '文件详细信息',
     menu6: '用户管理',
+    menu7: '数据统计',
     dashboard: '首页',
     analysis: '分析页',
     workplace: '工作台',
@@ -187,9 +188,11 @@ export default {
   analysis: {
     newUser: '新增用户',
     unreadInformation: '未读消息',
-    transactionAmount: '成交金额',
-    totalShopping: '购物总量',
-    monthlySales: '每月销售额',
+    downloadfilesAmount: '文件下载量',
+    downloadfiles:'文件下载',
+    totaluploadfiles: '文件上链量',
+    uploadfiles: '文件上链',
+    monthlySales: '每月使用情况',
     userAccessSource: '用户访问来源',
     january: '一月',
     february: '二月',
