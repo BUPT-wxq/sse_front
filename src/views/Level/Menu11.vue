@@ -81,22 +81,21 @@ const columns = reactive<TableColumn[]>([
     slots: {
       default: (scope) => {
         const date = new Date(scope.row.CreatedAt);
-        const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
-        return formattedDate;
+        return `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
       }
     }
   },
   {
     field: 'UpdatedAt',
-    label: t('tableDemo.updatetime')
-    // slots: {
-    //   default: (scope) => {
-    //     const date = new Date(scope.row.UpdatedAt);
-    //     const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
-    //     console.log(formattedDate)
-    //     return formattedDate;
-    //   }
-    // }
+    label: t('tableDemo.updatetime'),
+    slots: {
+      default: (scope) => {
+        const date = new Date(scope.row.UpdatedAt);
+        const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
+        console.log(formattedDate)
+        return formattedDate;
+      }
+    }
   },
   {
     field: 'Status',

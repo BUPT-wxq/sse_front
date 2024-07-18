@@ -229,14 +229,14 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
           title: t('router.menu6')
         }
       },
-      {
-        path: 'menu7',
-        name: 'Menu7',
-        component: () => import('@/views/Level/Menu7.vue'),
-        meta: {
-          title: t('router.menu7')
-        }
-      }
+      // {
+      //   path: 'menu7',
+      //   name: 'Menu7',
+      //   component: () => import('@/views/Level/Menu7.vue'),
+      //   meta: {
+      //     title: t('router.menu7')
+      //   }
+      // }
     ]
   }
 ]
