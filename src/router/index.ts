@@ -58,13 +58,21 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
   {
     path: '/level',
     component: Layout,
-    redirect: '/level/menu1/menu1-1',
+    redirect: '/level/menu7',
     name: 'Level',
     meta: {
-      title: t('router.level'),
+      title: t('router.level1'),
       icon: 'carbon:skill-level-advanced'
     },
     children: [
+        {
+          path: 'menu7',
+          name: 'Menu7',
+          component: () => import('@/views/Level/Menu7.vue'),
+          meta: {
+            title: t('router.menu7')
+          }
+       },
       {
         path: 'menu1',
         name: 'Menu1',
@@ -228,15 +236,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
         meta: {
           title: t('router.menu6')
         }
-      },
-      // {
-      //   path: 'menu7',
-      //   name: 'Menu7',
-      //   component: () => import('@/views/Level/Menu7.vue'),
-      //   meta: {
-      //     title: t('router.menu7')
-      //   }
-      // }
+      }
     ]
   }
 ]

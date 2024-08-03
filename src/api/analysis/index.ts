@@ -3,7 +3,7 @@ import type {
     AnalysisTotalTypes,
     UserAccessSource,
     WeeklyUserActivity,
-    monthlydownload
+    monthlydownload, picture1, picture2, picture3, picture4
 } from './types'
 
 export const getCountApi = (): Promise<IResponse<AnalysisTotalTypes[]>> => {
@@ -20,4 +20,16 @@ export const getWeeklyUserActivityApi = (): Promise<IResponse<WeeklyUserActivity
 
 export const getmonthlydownloadApi = (): Promise<IResponse<monthlydownload[]>> => {
     return request.get({ url: '/mock/analysis/monthlydownload' })
+}
+export const getPicture1Api = (): Promise<IResponse<picture1[]>> => {
+    return request.get({ url: '/mock/analysis/Picture1' })
+}
+export const getPicture2Api = (): Promise<IResponse<picture2[]>> => {
+    return request.get({ url: '/mock/analysis/Picture2' })
+}
+export const getPicture3Api = (): Promise<IResponse<picture3[]>> => {
+    return request.get({ url: '/mock/analysis/Picture3' })
+}
+export const getPicture4Api = (): Promise<IResponse<picture4[]>> => {
+    return request.get({ url: '/mock/analysis/Picture4' })
 }

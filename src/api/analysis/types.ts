@@ -19,3 +19,20 @@ export type monthlydownload = {
     downloadfiles: number
     uploadfiles: number
 }
+export type picture1 = {
+    name: string
+    value: number
+}
+export type picture2 = {
+    name: string
+    value: number
+}
+export type picture3 = {
+    name: string
+    value: number
+}
+export type picture4 = {
+    name: string
+    value: number
+
+}

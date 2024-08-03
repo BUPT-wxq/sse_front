@@ -72,46 +72,40 @@ export const lineOptions: EChartsOption = {
     ]
 }
 
-// export const pieOptions: EChartsOption = {
-//     title: {
-//         text: t('analysis.userAccessSource'),
-//         left: 'center'
-//     },
-//     tooltip: {
-//         trigger: 'item',
-//         formatter: '{a} <br/>{b} : {c} ({d}%)'
-//     },
-//     legend: {
-//         orient: 'vertical',
-//         left: 'left',
-//         data: [
-//             t('analysis.directAccess'),
-//             t('analysis.mailMarketing'),
-//             t('analysis.allianceAdvertising'),
-//             t('analysis.videoAdvertising'),
-//             t('analysis.searchEngines')
-//         ]
-//     },
-//     series: [
-//         {
-//             name: t('analysis.userAccessSource'),
-//             type: 'pie',
-//             radius: '55%',
-//             center: ['50%', '60%'],
-//             data: [
-//                 { value: 335, name: t('analysis.directAccess') },
-//                 { value: 310, name: t('analysis.mailMarketing') },
-//                 { value: 234, name: t('analysis.allianceAdvertising') },
-//                 { value: 135, name: t('analysis.videoAdvertising') },
-//                 { value: 1548, name: t('analysis.searchEngines') }
-//             ]
-//         }
-//     ]
-// }
+export const pieOptions: EChartsOption = {
+    title: {
+        text: t('用户类别'),
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: [
+            t('用户数'),
+            t('群组数')
+        ]
+    },
+    series: [
+        {
+            name: t('analysis.userAccessSource'),
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                { value: 335, name: t('用户数') },
+                { value: 310, name: t('群组数') }
+            ]
+        }
+    ]
+}
 
 export const barOptions: EChartsOption = {
     title: {
-        text: t('analysis.weeklyUserActivity'),
+        text: t('数量分析'),
         left: 'center'
     },
     tooltip: {
@@ -128,13 +122,10 @@ export const barOptions: EChartsOption = {
     xAxis: {
         type: 'category',
         data: [
-            t('analysis.monday'),
-            t('analysis.tuesday'),
-            t('analysis.wednesday'),
-            t('analysis.thursday'),
-            t('analysis.friday'),
-            t('analysis.saturday'),
-            t('analysis.sunday')
+            t('用户数量'),
+            t('令牌数量'),
+            t('关键词总数'),
+            t('总下载数'),
         ],
         axisTick: {
             alignWithLabel: true
@@ -145,8 +136,8 @@ export const barOptions: EChartsOption = {
     },
     series: [
         {
-            name: t('analysis.activeQuantity'),
-            data: [13253, 34235, 26321, 12340, 24643, 1322, 1324],
+            name: t('数量分析'),
+            data: [13253, 34235, 26321, 12340],
             type: 'bar'
         }
     ]
@@ -183,126 +174,126 @@ export const barOptions: EChartsOption = {
 //     ]
 // }
 
-// export const wordOptions = {
-//     series: [
-//         {
-//             type: 'wordCloud',
-//             gridSize: 2,
-//             sizeRange: [12, 50],
-//             rotationRange: [-90, 90],
-//             shape: 'pentagon',
-//             width: 600,
-//             height: 400,
-//             drawOutOfBound: true,
-//             textStyle: {
-//                 color: function () {
-//                     return (
-//                         'rgb(' +
-//                         [
-//                             Math.round(Math.random() * 160),
-//                             Math.round(Math.random() * 160),
-//                             Math.round(Math.random() * 160)
-//                         ].join(',') +
-//                         ')'
-//                     )
-//                 }
-//             },
-//             emphasis: {
-//                 textStyle: {
-//                     shadowBlur: 10,
-//                     shadowColor: '#333'
-//                 }
-//             },
-//             data: [
-//                 {
-//                     name: 'Sam S Club',
-//                     value: 10000,
-//                     textStyle: {
-//                         color: 'black'
-//                     },
-//                     emphasis: {
-//                         textStyle: {
-//                             color: 'red'
-//                         }
-//                     }
-//                 },
-//                 {
-//                     name: 'Macys',
-//                     value: 6181
-//                 },
-//                 {
-//                     name: 'Amy Schumer',
-//                     value: 4386
-//                 },
-//                 {
-//                     name: 'Jurassic World',
-//                     value: 4055
-//                 },
-//                 {
-//                     name: 'Charter Communications',
-//                     value: 2467
-//                 },
-//                 {
-//                     name: 'Chick Fil A',
-//                     value: 2244
-//                 },
-//                 {
-//                     name: 'Planet Fitness',
-//                     value: 1898
-//                 },
-//                 {
-//                     name: 'Pitch Perfect',
-//                     value: 1484
-//                 },
-//                 {
-//                     name: 'Express',
-//                     value: 1112
-//                 },
-//                 {
-//                     name: 'Home',
-//                     value: 965
-//                 },
-//                 {
-//                     name: 'Johnny Depp',
-//                     value: 847
-//                 },
-//                 {
-//                     name: 'Lena Dunham',
-//                     value: 582
-//                 },
-//                 {
-//                     name: 'Lewis Hamilton',
-//                     value: 555
-//                 },
-//                 {
-//                     name: 'KXAN',
-//                     value: 550
-//                 },
-//                 {
-//                     name: 'Mary Ellen Mark',
-//                     value: 462
-//                 },
-//                 {
-//                     name: 'Farrah Abraham',
-//                     value: 366
-//                 },
-//                 {
-//                     name: 'Rita Ora',
-//                     value: 360
-//                 },
-//                 {
-//                     name: 'Serena Williams',
-//                     value: 282
-//                 },
-//                 {
-//                     name: 'NCAA baseball tournament',
-//                     value: 273
-//                 },
-//                 {
-//                     name: 'Point Break',
-//                     value: 265
-//                 }
-//             ]
-//         }
-//         ]
-// }
+export const wordOptions = {
+    series: [
+        {
+            type: 'wordCloud',
+            gridSize: 2,
+            sizeRange: [12, 50],
+            rotationRange: [-90, 90],
+            shape: 'pentagon',
+            width: 600,
+            height: 400,
+            drawOutOfBound: true,
+            textStyle: {
+                color: function () {
+                    return (
+                        'rgb(' +
+                        [
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160)
+                        ].join(',') +
+                        ')'
+                    )
+                }
+            },
+            emphasis: {
+                textStyle: {
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            },
+            data: [
+                {
+                    name: 'Sam S Club',
+                    value: 10000,
+                    textStyle: {
+                        color: 'black'
+                    },
+                    emphasis: {
+                        textStyle: {
+                            color: 'red'
+                        }
+                    }
+                },
+                {
+                    name: 'Macys',
+                    value: 6181
+                },
+                {
+                    name: 'Amy Schumer',
+                    value: 4386
+                },
+                {
+                    name: 'Jurassic World',
+                    value: 4055
+                },
+                {
+                    name: 'Charter Communications',
+                    value: 2467
+                },
+                {
+                    name: 'Chick Fil A',
+                    value: 2244
+                },
+                {
+                    name: 'Planet Fitness',
+                    value: 1898
+                },
+                {
+                    name: 'Pitch Perfect',
+                    value: 1484
+                },
+                {
+                    name: 'Express',
+                    value: 1112
+                },
+                {
+                    name: 'Home',
+                    value: 965
+                },
+                {
+                    name: 'Johnny Depp',
+                    value: 847
+                },
+                {
+                    name: 'Lena Dunham',
+                    value: 582
+                },
+                {
+                    name: 'Lewis Hamilton',
+                    value: 555
+                },
+                {
+                    name: 'KXAN',
+                    value: 550
+                },
+                {
+                    name: 'Mary Ellen Mark',
+                    value: 462
+                },
+                {
+                    name: 'Farrah Abraham',
+                    value: 366
+                },
+                {
+                    name: 'Rita Ora',
+                    value: 360
+                },
+                {
+                    name: 'Serena Williams',
+                    value: 282
+                },
+                {
+                    name: 'NCAA baseball tournament',
+                    value: 273
+                },
+                {
+                    name: 'Point Break',
+                    value: 265
+                }
+            ]
+        }
+        ]
+}

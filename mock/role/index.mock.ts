@@ -5,10 +5,18 @@ const timeout = 1000
 
 const adminList = [
   {
+    // path: '/level',
+    // component: '#',
+    // redirect: '/level/menu1/menu1-1/menu1-1-1',
+    // name: 'Level',
+    // meta: {
+    //   title: 'router.level',
+    //   icon: 'carbon:skill-level-advanced'
+    // },
     path: '/level',
     component: '#',
-    redirect: '/level/menu1/menu1-1/menu1-1-1',
-    name: 'Level',
+    redirect: '/level/menu7',
+    name: 'menu7',
     meta: {
       title: 'router.level',
       icon: 'carbon:skill-level-advanced'

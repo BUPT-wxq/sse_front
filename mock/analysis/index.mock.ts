@@ -82,5 +82,71 @@ export default [
                 ]
             }
         }
+    },
+    {
+        url: '/mock/analysis/picture1',
+        method: 'get',
+        timeout,
+        response: () => {
+            return {
+                code: SUCCESS_CODE,
+                data: [
+                    { value: 100, name: 'uid1' },
+                    { value: 200, name: 'uid2' },
+                    { value: 300, name: 'uid3' },
+                    { value: 400, name: 'uid4' },
+                ]
+            }
+        }
+    },
+    {
+        url: '/mock/analysis/picture2',
+        method: 'get',
+        timeout,
+        response: () => {
+            return {
+                code: SUCCESS_CODE,
+                data: [
+                    { value: 100, name: 'uid1' },
+                    { value: 200, name: 'uid2' },
+                    { value: 300, name: 'uid3' },
+                    { value: 400, name: 'uid4' },
+                ]
+            }
+        }
+    },
+    {
+        url: '/mock/analysis/picture3',
+        method: 'get',
+        timeout,
+        response: () => {
+            return {
+                code: SUCCESS_CODE,
+                data: [
+                    { value: 100, name: 'uid1' },
+                    { value: 200, name: 'uid2' },
+                    { value: 300, name: 'uid3' },
+                    { value: 400, name: 'uid4' },
+                    { value: 500, name: 'uid5' },
+                ]
+            }
+        }
+    },
+    {
+        url: '/mock/analysis/picture4',
+        method: 'get',
+        timeout,
+        response: () => {
+            return {
+                code: SUCCESS_CODE,
+                data: [
+                    { value: 100, name: 'uid1' },
+                    { value: 200, name: 'uid2' },
+                    { value: 300, name: 'uid3' },
+                    { value: 400, name: 'uid4' },
+                    { value: 500, name: 'uid5' },
+                ]
+            }
+        }
     }
 ] as MockMethod[]

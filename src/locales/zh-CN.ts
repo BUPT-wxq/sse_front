@@ -103,7 +103,7 @@ export default {
   },
   login: {
     welcome: '欢迎使用本平台',
-    message: '链上混淆数据检索权限强制性访问控制平台',
+    message: '区块链电力数据共享服务系统',
     username: '用户名',
     password: '密码',
     register: '注册',
@@ -120,7 +120,8 @@ export default {
   },
   router: {
     login: '登录',
-    level: '主页',
+    level1: '主页',
+    level2: '统计',
     menu: '菜单',
     menu1: '混淆数据检索模块',
     menu11: '搜索令牌生成',
