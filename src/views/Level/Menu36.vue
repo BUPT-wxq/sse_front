@@ -1,4 +1,4 @@
-<script setup lang="tsx">
+yonghu<script setup lang="tsx">
 import { useI18n } from '@/hooks/web/useI18n'
 import { Table, TableColumn } from '@/components/Table'
 // import { getTreeTableListApi } from '@/api/table'
@@ -74,12 +74,26 @@ const columns = reactive<TableColumn[]>([
     label: t('tableDemo.operationtype')
   },
   {
-    field: 'CreatedAt',
-    label: t('tableDemo.createtime')
+    field: 'UpdatedAt',
+    label: t('tableDemo.updatetime'),
+    slots: {
+      default: (scope) => {
+        const date = new Date(scope.row.UpdatedAt);
+        const formattedDate = `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
+        console.log(formattedDate)
+        return formattedDate;
+      }
+    }
   },
   {
     field: 'UpdatedAt',
-    label: t('tableDemo.updatetime')
+    label: t('tableDemo.updatetime'),
+    slots: {
+      default: (scope) => {
+        const date = new Date(scope.row.UpdateAt);
+        return `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}:${String(date.getSeconds()).padStart(2, '0')}`;
+      }
+    }
   },
   {
     field: 'Status',

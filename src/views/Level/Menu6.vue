@@ -8,6 +8,7 @@ import { useTable } from '@/hooks/web/useTable'
 import { getUserinfoListApi } from '@/api/table'
 import { useUserStore } from '@/store/modules/user'
 import { reactive, ref } from 'vue'
+import {ContentWrap} from '../../components/ContentWrap'
 // import { ref, watch, unref, nextTick, onMounted } from 'vue'
 // import { responseEncoding } from 'axios'
 
@@ -40,17 +41,28 @@ const { tableRegister, tableState } = useTable({
   }
 })
 
+// const getTableList = async (params?: Params): Promise<TableListResponse> => {
+//   const res = await getUserinfoListApi(
+//       params || {
+//         pageIndex: 1,
+//         pageSize: 10,
+//         uid: userStore.getUid,
+//         token: userStore.getToken
+//       }
+//   )
+//   return res
+// }
 const getTableList = async (params?: Params): Promise<TableListResponse> => {
   const res = await getUserinfoListApi(
-    params || {
-      pageIndex: 1,
-      pageSize: 10,
-      uid: userStore.getUid,
-      token: userStore.getToken
-    }
-  )
-  return res
-}
+      params || {
+        pageIndex: 1,
+        pageSize: 10,
+        uid: userStore.getUid,
+        token: userStore.getToken
+      }
+  );
+  return res;
+};
 
 getTableList()
 
@@ -89,17 +101,17 @@ const columns = reactive<TableColumn[]>([
 <template>
   <ContentWrap :title="`${t('router.treeTable')} ${t('tableDemo.example')}`">
     <Table
-      v-model:pageSize="pageSize"
-      v-model:currentPage="currentPage"
-      :columns="columns"
-      :data="dataList"
-      row-key="id"
-      :loading="loading"
-      sortable
-      :pagination="{
+        v-model:pageSize="pageSize"
+        v-model:currentPage="currentPage"
+        :columns="columns"
+        :data="dataList"
+        row-key="id"
+        :loading="loading"
+        sortable
+        :pagination="{
         total: total
       }"
-      @register="tableRegister"
+        @register="tableRegister"
     />
   </ContentWrap>
 </template>

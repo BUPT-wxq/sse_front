@@ -3,8 +3,8 @@ import { LoginForm, RegisterForm } from './components'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
 import { LocaleDropdown } from '@/components/LocaleDropdown'
 import { useI18n } from '@/hooks/web/useI18n'
-import { underlineToHump } from '@/utils'
-import { useAppStore } from '@/store/modules/app'
+//import { underlineToHump } from '@/utils'
+//import { useAppStore } from '@/store/modules/app'
 import { useDesign } from '@/hooks/web/useDesign'
 import { ref } from 'vue'
 import { ElScrollbar } from 'element-plus'
@@ -13,7 +13,7 @@ const { getPrefixCls } = useDesign()
 
 const prefixCls = getPrefixCls('login')
 
-const appStore = useAppStore()
+//const appStore = useAppStore()
 
 const { t } = useI18n()
 
@@ -40,7 +40,7 @@ const toLogin = () => {
         >
           <div class="flex items-center relative text-white">
             <img src="@/assets/imgs/logo.png" alt="" class="w-48px h-48px mr-10px" />
-            <span class="text-20px font-bold">{{ underlineToHump(appStore.getTitle) }}</span>
+            <span class="text-20px font-bold">区块链电力数据共享服务系统</span>
           </div>
           <div class="flex justify-center items-center h-[calc(100%-60px)]">
             <TransitionGroup
@@ -62,7 +62,7 @@ const toLogin = () => {
           >
             <div class="flex items-center at-2xl:hidden at-xl:hidden">
               <img src="@/assets/imgs/logo.png" alt="" class="w-48px h-48px mr-10px" />
-              <span class="text-20px font-bold">{{ underlineToHump(appStore.getTitle) }}</span>
+              <span class="text-20px font-bold">区块链电力数据共享服务系统</span>
             </div>
 
             <div class="flex justify-end items-center space-x-10px">
