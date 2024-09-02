@@ -195,18 +195,6 @@ export default {
     uploadfiles: '文件上链',
     monthlySales: '每月使用情况',
     userAccessSource: '用户访问来源',
-    january: '一月',
-    february: '二月',
-    march: '三月',
-    april: '四月',
-    may: '五月',
-    june: '六月',
-    july: '七月',
-    august: '八月',
-    september: '九月',
-    october: '十月',
-    november: '十一月',
-    december: '十二月',
     estimate: '预计',
     actual: '实际',
     directAccess: '直接访问',
@@ -216,13 +204,26 @@ export default {
     searchEngines: '搜索引擎',
     weeklyUserActivity: '每周用户活跃量',
     activeQuantity: '活跃量',
-    monday: '周一',
-    tuesday: '周二',
-    wednesday: '周三',
-    thursday: '周四',
-    friday: '周五',
-    saturday: '周六',
-    sunday: '周日'
+    fileId: '文件ID',
+    count: '数量',
+  },
+  ScreenDownload: {
+    fileId: '文件ID',
+    count: '下载数量'
+  },
+  ScreenUpload: {
+    name: '上传类型',
+    condition: '贡献量'
+  },
+  ScreenUserRatio: {
+    type: '用户类型',
+    count: '用户所占数量'
+  },
+  ScreenCount: {
+    userNum: '用户总数',
+    uploadNum: '上传总数',
+    downloadNum: '下载总数',
+    keywordNum: '关键字总数',
   },
   workplace: {
     goodMorning: '早安',

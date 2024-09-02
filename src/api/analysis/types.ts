@@ -4,35 +4,24 @@ export type AnalysisTotalTypes = {
     uploadfiles: number
 }
 
-export type UserAccessSource = {
-    value: number
-    name: string
+export type ScreenCount = {
+    userNum: number
+    uploadNum: number
+    downloadNum: number
+    keywordNum: number
 }
 
-export type WeeklyUserActivity = {
-    value: number
-    name: string
+export type ScreenUserRatio = {
+    type: string
+    count: number
 }
 
-export type monthlydownload = {
-    name: string
-    downloadfiles: number
-    uploadfiles: number
+export type ScreenDownload = {
+    fileId: string
+    count: number
 }
-export type picture1 = {
-    name: string
-    value: number
-}
-export type picture2 = {
-    name: string
-    value: number
-}
-export type picture3 = {
-    name: string
-    value: number
-}
-export type picture4 = {
-    name: string
-    value: number
 
+export type ScreenUpload = {
+    name: string
+    condition: string
 }
