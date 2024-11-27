@@ -86,7 +86,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           })
         : undefined,
       ViteEjsPlugin({
-        title: env.VITE_APP_TITLE
+        title: "区块链电力数据共享服务系统"
       }),
       UnoCSS(),
       // sveltekit(),

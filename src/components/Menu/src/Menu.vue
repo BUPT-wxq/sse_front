@@ -60,6 +60,7 @@ export default defineComponent({
     const menuSelect = (index: string) => {
       if (props.menuSelect) {
         props.menuSelect(index)
+        console.log(index)
       }
       // 自定义事件
       if (isUrl(index)) {

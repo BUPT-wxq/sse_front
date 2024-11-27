@@ -8,6 +8,7 @@ import { useTable } from '@/hooks/web/useTable'
 import { getTableListApi } from '@/api/table'
 import { useUserStore } from '@/store/modules/user'
 import { reactive, ref } from 'vue'
+import {ContentWrap} from '../../components/ContentWrap'
 // import { ref, watch, unref, nextTick, onMounted } from 'vue'
 // import { responseEncoding } from 'axios'
 

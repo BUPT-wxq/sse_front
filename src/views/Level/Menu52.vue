@@ -46,7 +46,7 @@ const getTableList = async (params?: Params): Promise<TableListResponse> => {
       pageIndex: 1,
       pageSize: 10,
       uid: userStore.getUid,
-      token: userStore.getToken
+      token: userStore.getToken,
     }
   )
   return res
