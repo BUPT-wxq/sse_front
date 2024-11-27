@@ -5,6 +5,8 @@ COPY . .
 RUN npm install -g npm@9.6.2
 RUN npm i -g pnpm@v8.13.1
 RUN pnpm i
+RUN rm -rf node_modules package-lock.json
+RUN npm install
 RUN pnpm run build:pro
 
 FROM nginx:1.21.0-alpine
