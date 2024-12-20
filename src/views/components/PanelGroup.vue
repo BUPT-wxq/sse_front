@@ -6,7 +6,7 @@ import { CountTo } from './CountTo'
 import { useDesign } from '@/hooks/web/useDesign'
 import { useI18n } from '@/hooks/web/useI18n'
 import { ref, reactive } from 'vue'
-import { getCountApi } from '@/api/analysis'
+// import { getCountApi } from '@/api/analysis'
 import type { AnalysisTotalTypes } from '@/api/analysis/types'
 
 const { t } = useI18n()
@@ -24,12 +24,12 @@ let totalState = reactive<AnalysisTotalTypes>({
 })
 
 const getCount = async () => {
-  const res = await getCountApi()
-      .catch(() => {})
-      .finally(() => {
-        loading.value = false
-      })
-  totalState = Object.assign(totalState, res?.data || {})
+  // const res = await getCountApi()
+  //     .catch(() => {})
+  //     .finally(() => {
+  //       loading.value = false
+  //     })
+  // totalState = Object.assign(totalState, res?.data || {})
 }
 
 getCount()
@@ -44,20 +44,20 @@ getCount()
             <div :class="`${prefixCls}__item flex justify-between`">
               <div>
                 <div
-                    :class="`${prefixCls}__item--icon ${prefixCls}__item--peoples p-16px inline-block rounded-6px`"
+                  :class="`${prefixCls}__item--icon ${prefixCls}__item--peoples p-16px inline-block rounded-6px`"
                 >
                   <Icon icon="svg-icon:peoples" :size="40" />
                 </div>
               </div>
               <div class="flex flex-col justify-between">
                 <div :class="`${prefixCls}__item--text text-16px text-gray-500 text-right`">{{
-                    t('analysis.newUser')
-                  }}</div>
+                  t('analysis.newUser')
+                }}</div>
                 <CountTo
-                    class="text-20px font-700 text-right"
-                    :start-val="0"
-                    :end-val="102400"
-                    :duration="2600"
+                  class="text-20px font-700 text-right"
+                  :start-val="0"
+                  :end-val="102400"
+                  :duration="2600"
                 />
               </div>
             </div>
@@ -73,20 +73,20 @@ getCount()
             <div :class="`${prefixCls}__item flex justify-between`">
               <div>
                 <div
-                    :class="`${prefixCls}__item--icon ${prefixCls}__item--money p-16px inline-block rounded-6px`"
+                  :class="`${prefixCls}__item--icon ${prefixCls}__item--money p-16px inline-block rounded-6px`"
                 >
                   <Icon icon="svg-icon:money" :size="40" />
                 </div>
               </div>
               <div class="flex flex-col justify-between">
                 <div :class="`${prefixCls}__item--text text-16px text-gray-500 text-right`">{{
-                    t('analysis.downloadfilesAmount')
-                  }}</div>
+                  t('analysis.downloadfilesAmount')
+                }}</div>
                 <CountTo
-                    class="text-20px font-700 text-right"
-                    :start-val="0"
-                    :end-val="9280"
-                    :duration="2600"
+                  class="text-20px font-700 text-right"
+                  :start-val="0"
+                  :end-val="9280"
+                  :duration="2600"
                 />
               </div>
             </div>
@@ -102,20 +102,20 @@ getCount()
             <div :class="`${prefixCls}__item flex justify-between`">
               <div>
                 <div
-                    :class="`${prefixCls}__item--icon ${prefixCls}__item--shopping p-16px inline-block rounded-6px`"
+                  :class="`${prefixCls}__item--icon ${prefixCls}__item--shopping p-16px inline-block rounded-6px`"
                 >
                   <Icon icon="svg-icon:shopping" :size="40" />
                 </div>
               </div>
               <div class="flex flex-col justify-between">
                 <div :class="`${prefixCls}__item--text text-16px text-gray-500 text-right`">{{
-                    t('analysis.totaluploadfiles')
-                  }}</div>
+                  t('analysis.totaluploadfiles')
+                }}</div>
                 <CountTo
-                    class="text-20px font-700 text-right"
-                    :start-val="0"
-                    :end-val="13600"
-                    :duration="2600"
+                  class="text-20px font-700 text-right"
+                  :start-val="0"
+                  :end-val="13600"
+                  :duration="2600"
                 />
               </div>
             </div>
