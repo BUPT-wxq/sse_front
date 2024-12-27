@@ -74,7 +74,7 @@ export const lineOptions: EChartsOption = {
 
 export const pieOptions: EChartsOption = {
     title: {
-        text: t('用户类别'),
+        text: t('用户贡献top'),
         left: 'center'
     },
     tooltip: {
@@ -294,7 +294,11 @@ export const barOptions: EChartsOption = {
 // }
 
 export const barOptions2: EChartsOption = {
-    xAxis:{
+    grid: {
+        left: 'center',  // 中间对齐
+        containLabel: true
+    },
+    xAxis: {
         max: 'dataMax'
     },
     yAxis: {
@@ -310,19 +314,60 @@ export const barOptions2: EChartsOption = {
             realtimeSort: true,
             name: '文件下载统计',
             type: 'bar',
-            data:[],
+            data: [],
             label: {
-                show:true,
+                show: true,
                 position: 'right',
                 valueAnimation: true
             }
         }
     ],
-    legend:{
-        show: true
+    legend: {
+        show: true,
+        left: 'center'  // 图例居中
     },
     animationDuration: 3000,
     animationDelayUpdate: 3000,
     animationEasing: 'linear',
     animationEasingUpdate: 'linear'
-}
+};
+
+
+export const barOptions3: EChartsOption = {
+    grid: {
+        left: 'center',  // 中间对齐
+        containLabel: true
+    },
+    xAxis: {
+        max: 'dataMax'
+    },
+    yAxis: {
+        type: 'category',
+        data: [],
+        inverse: true,
+        animationDuration: 300,
+        animationDelayUpdate: 300,
+        max: 4,
+    },
+    series: [
+        {
+            realtimeSort: true,
+            name: '文件下载统计',
+            type: 'bar',
+            data: [],
+            label: {
+                show: true,
+                position: 'right',
+                valueAnimation: true
+            }
+        }
+    ],
+    legend: {
+        show: true,
+        left: 'center'  // 图例居中
+    },
+    animationDuration: 3000,
+    animationDelayUpdate: 3000,
+    animationEasing: 'linear',
+    animationEasingUpdate: 'linear'
+};
