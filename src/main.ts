@@ -27,6 +27,8 @@ import { setupRouter } from './router'
 
 import { createApp } from 'vue'
 
+import ElementPlus from 'element-plus'
+
 import App from './App.vue'
 
 import './permission'
@@ -44,6 +46,8 @@ const setupAll = async () => {
   setupElementPlus(app)
 
   setupRouter(app)
+
+  app.use(ElementPlus)
 
   app.mount('#app')
 }

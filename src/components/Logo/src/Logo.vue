@@ -12,7 +12,7 @@ const appStore = useAppStore()
 const show = ref(true)
 
 // const title = computed(() => appStore.getTitle)
-const title = "区块链电力数据共享服务组件"
+const title = "数据共享服务组件"
 const layout = computed(() => appStore.getLayout)
 
 const collapse = computed(() => appStore.getCollapse)

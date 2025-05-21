@@ -40,7 +40,7 @@ const toLogin = () => {
         >
           <div class="flex items-center relative text-white">
             <img src="@/assets/imgs/logo.png" alt="" class="w-48px h-48px mr-10px" />
-            <span class="text-20px font-bold">区块链电力数据共享服务系统</span>
+            <span class="text-20px font-bold">数据共享服务系统</span>
           </div>
           <div class="flex justify-center items-center h-[calc(100%-60px)]">
             <TransitionGroup
@@ -62,7 +62,7 @@ const toLogin = () => {
           >
             <div class="flex items-center at-2xl:hidden at-xl:hidden">
               <img src="@/assets/imgs/logo.png" alt="" class="w-48px h-48px mr-10px" />
-              <span class="text-20px font-bold">区块链电力数据共享服务系统</span>
+              <span class="text-20px font-bold">数据共享服务系统</span>
             </div>
 
             <div class="flex justify-end items-center space-x-10px">

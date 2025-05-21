@@ -236,6 +236,49 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
         meta: {
           title: t('router.menu6')
         }
+      },
+      {
+        path: 'system-test',
+        name: 'system-test',
+        component: getParentLayout(),
+        redirect: '/level/system-test/system-init',
+        meta: {
+          title: t('系统功能测试')
+        },
+        children: [
+          {
+            path: 'system-init',
+            name: 'system-init',
+            component: () => import('@/views/Level/system-init.vue'),
+            meta: {
+              title: t('系统初始化')
+            }
+          },
+          {
+            path: 'file-upload',
+            name: 'file-upload',
+            component: () => import('@/views/Level/file-upload.vue'),
+            meta: {
+              title: t('数据加密上传')
+            }
+          },
+          {
+            path: 'file-download',
+            name: 'file-download',
+            component: () => import('@/views/Level/file-download.vue'),
+            meta: {
+              title: t('数据检索及下载解密')
+            }
+          },
+          {
+            path: 'data-confirmation',
+            name: 'data-confirmation',
+            component: () => import('@/views/Level/data-confirmation.vue'),
+            meta: {
+              title: t('数据校核')
+            }
+          }
+        ]
       }
     ]
   }

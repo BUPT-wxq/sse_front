@@ -130,3 +130,18 @@ Support modern browsers, not IE
 ## License
 
 [MIT](./LICENSE)
+
+
+
+
+## 运行说明
+代码为SSE的前端代码
+本地运行
+1. 编译 pnpm run build:pro
+2. 运行 pnpm run serve:pro
+
+镜像打包
+1. docker  build -f Dockerfile  -t wangxingqi411/sse_front:v1.0 .
+
+
+具体npm，node版本参见Dockerfile

@@ -17,6 +17,6 @@ const prefixCls = getPrefixCls('footer')
     :class="prefixCls"
     class="text-center text-[var(--el-text-color-placeholder)] bg-[var(--app-content-bg-color)] h-[var(--app-footer-height)] leading-[var(--app-footer-height)] dark:bg-[var(--el-bg-color)]"
   >
-    Copyright ©2021-present 区块链电力数据共享服务系统
+    Copyright ©2021-present 数据共享服务系统
   </div>
 </template>
