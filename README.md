@@ -137,7 +137,7 @@ Support modern browsers, not IE
 ## 运行说明
 代码为SSE的前端代码
 本地运行
-1. 编译 pnpm run build:pro
+1. 编译 pnpm run build:pro  或者使用Makefile的命令：make run
 2. 运行 pnpm run serve:pro
 
 镜像打包
